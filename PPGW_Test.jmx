@@ -17,7 +17,7 @@
     <hashTree>
       <TestFragmentController guiclass="TestFragmentControllerGui" testclass="TestFragmentController" testname="Discovery" enabled="false"/>
       <hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Discovery" enabled="true">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Discovery">
           <stringProp name="HTTPSampler.domain">${acqHost}</stringProp>
           <stringProp name="HTTPSampler.port">443</stringProp>
           <stringProp name="HTTPSampler.protocol">https</stringProp>
@@ -44,13 +44,13 @@
             <stringProp name="JSONPostProcessor.defaultValues">0</stringProp>
           </JSONPostProcessor>
           <hashTree/>
-          <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Regular Expression Extractor" enabled="true">
+          <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Regular Expression Extractor">
             <stringProp name="RegexExtractor.useHeaders">true</stringProp>
             <stringProp name="RegexExtractor.refname">rlid</stringProp>
-            <stringProp name="RegexExtractor.regex">[a-zA-Z0-9]{0,}[\-][a-zA-Z0-9]{0,}[\-][a-zA-Z0-9]{0,}[\-][a-zA-Z0-9]{0,}[\-][a-zA-Z0-9]{0,}</stringProp>
-            <stringProp name="RegexExtractor.template">$0$</stringProp>
+            <stringProp name="RegexExtractor.regex">X-Request-Link-Id: (.+)</stringProp>
+            <stringProp name="RegexExtractor.template">$1$</stringProp>
             <stringProp name="RegexExtractor.default">0</stringProp>
-            <stringProp name="RegexExtractor.match_number">0</stringProp>
+            <stringProp name="RegexExtractor.match_number">1</stringProp>
             <boolProp name="RegexExtractor.default_empty_value">false</boolProp>
           </RegexExtractor>
           <hashTree/>
@@ -58,7 +58,7 @@
       </hashTree>
       <TestFragmentController guiclass="TestFragmentControllerGui" testclass="TestFragmentController" testname="GetInvoice" enabled="false"/>
       <hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Invoice" enabled="true">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Invoice">
           <stringProp name="HTTPSampler.domain">${acqHost}</stringProp>
           <stringProp name="HTTPSampler.port">443</stringProp>
           <stringProp name="HTTPSampler.protocol">https</stringProp>
@@ -78,7 +78,7 @@
           </elementProp>
         </HTTPSamplerProxy>
         <hashTree>
-          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager">
             <collectionProp name="HeaderManager.headers">
               <elementProp name="" elementType="Header">
                 <stringProp name="Header.name">X-Request-Link-Id</stringProp>
@@ -103,7 +103,7 @@
       </hashTree>
       <TestFragmentController guiclass="TestFragmentControllerGui" testclass="TestFragmentController" testname="U_Terminate" enabled="false"/>
       <hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="u_terminate" enabled="true">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="u_terminate">
           <stringProp name="HTTPSampler.domain">${acqHost}</stringProp>
           <stringProp name="HTTPSampler.port">443</stringProp>
           <stringProp name="HTTPSampler.protocol">https</stringProp>
@@ -146,7 +146,7 @@
       </hashTree>
       <TestFragmentController guiclass="TestFragmentControllerGui" testclass="TestFragmentController" testname="MS_Terminate" enabled="false"/>
       <hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="ms_terminate" enabled="true">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="ms_terminate">
           <stringProp name="HTTPSampler.domain">${acqHost}</stringProp>
           <stringProp name="HTTPSampler.port">443</stringProp>
           <stringProp name="HTTPSampler.protocol">https</stringProp>
@@ -189,7 +189,7 @@
       </hashTree>
       <TestFragmentController guiclass="TestFragmentControllerGui" testclass="TestFragmentController" testname="Pay" enabled="false"/>
       <hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="pay" enabled="true">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="pay">
           <stringProp name="HTTPSampler.domain">${acqHost}</stringProp>
           <stringProp name="HTTPSampler.port">443</stringProp>
           <stringProp name="HTTPSampler.protocol">https</stringProp>
@@ -213,7 +213,7 @@
           </elementProp>
         </HTTPSamplerProxy>
         <hashTree>
-          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager">
             <collectionProp name="HeaderManager.headers">
               <elementProp name="" elementType="Header">
                 <stringProp name="Header.name">X-Request-Link-Id</stringProp>
@@ -238,7 +238,7 @@
       </hashTree>
       <TestFragmentController guiclass="TestFragmentControllerGui" testclass="TestFragmentController" testname="Refund" enabled="false"/>
       <hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Refund" enabled="true">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Refund">
           <stringProp name="HTTPSampler.domain">${acqHost}</stringProp>
           <stringProp name="HTTPSampler.port">443</stringProp>
           <stringProp name="HTTPSampler.protocol">https</stringProp>
@@ -260,7 +260,7 @@
           </elementProp>
         </HTTPSamplerProxy>
         <hashTree>
-          <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Regular Expression Extractor" enabled="true">
+          <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Regular Expression Extractor">
             <stringProp name="RegexExtractor.useHeaders">true</stringProp>
             <stringProp name="RegexExtractor.refname">rlid</stringProp>
             <stringProp name="RegexExtractor.regex">[a-zA-Z0-9]{0,}[\-][a-zA-Z0-9]{0,}[\-][a-zA-Z0-9]{0,}[\-][a-zA-Z0-9]{0,}[\-][a-zA-Z0-9]{0,}</stringProp>
@@ -270,7 +270,7 @@
             <boolProp name="RegexExtractor.default_empty_value">false</boolProp>
           </RegexExtractor>
           <hashTree/>
-          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager">
             <collectionProp name="HeaderManager.headers">
               <elementProp name="" elementType="Header">
                 <stringProp name="Header.name">X-Ms-Id</stringProp>
@@ -316,7 +316,7 @@ System.out.println(prid);</stringProp>
       </hashTree>
       <TestFragmentController guiclass="TestFragmentControllerGui" testclass="TestFragmentController" testname="PPGW acquirer query" enabled="false"/>
       <hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="query" enabled="true">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="query">
           <stringProp name="HTTPSampler.domain">pp-gw.dev.hivexnet.com</stringProp>
           <stringProp name="HTTPSampler.protocol">https</stringProp>
           <stringProp name="HTTPSampler.path">hivex/acquire/query</stringProp>
@@ -358,7 +358,7 @@ System.out.println(prid);</stringProp>
       </hashTree>
       <TestFragmentController guiclass="TestFragmentControllerGui" testclass="TestFragmentController" testname="GenerateTarget" enabled="false"/>
       <hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GenerateTarget" enabled="true">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GenerateTarget">
           <stringProp name="HTTPSampler.domain">${acqHost}</stringProp>
           <stringProp name="HTTPSampler.port">443</stringProp>
           <stringProp name="HTTPSampler.protocol">https</stringProp>
@@ -418,7 +418,7 @@ System.out.println(prid);</stringProp>
       </hashTree>
       <TestFragmentController guiclass="TestFragmentControllerGui" testclass="TestFragmentController" testname="ShyGuyGenerateTarget" enabled="false"/>
       <hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GenerateTarget" enabled="true">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GenerateTarget">
           <stringProp name="HTTPSampler.domain">api-ppy-iss.hivexme.net</stringProp>
           <stringProp name="HTTPSampler.port">443</stringProp>
           <stringProp name="HTTPSampler.protocol">https</stringProp>
@@ -516,7 +516,7 @@ System.out.println(prid);</stringProp>
       </hashTree>
       <TestFragmentController guiclass="TestFragmentControllerGui" testclass="TestFragmentController" testname="CPM/ACQ/CREATE" enabled="false"/>
       <hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="acquire/cpm/Create" enabled="true">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="acquire/cpm/Create">
           <stringProp name="HTTPSampler.domain">pp-gw.dev.hivexnet.com</stringProp>
           <stringProp name="HTTPSampler.protocol">https</stringProp>
           <stringProp name="HTTPSampler.path">hivex/acquire/cpm/create</stringProp>
@@ -581,7 +581,7 @@ System.out.println(prid);</stringProp>
       </hashTree>
       <TestFragmentController guiclass="TestFragmentControllerGui" testclass="TestFragmentController" testname="Cancel" enabled="false"/>
       <hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Cancel" enabled="true">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Cancel">
           <stringProp name="HTTPSampler.domain">${acqHost}</stringProp>
           <stringProp name="HTTPSampler.port">443</stringProp>
           <stringProp name="HTTPSampler.protocol">https</stringProp>
@@ -648,7 +648,39 @@ System.out.println(prid);</stringProp>
           <hashTree/>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Discovery with Valid QR">
+      <TestFragmentController guiclass="TestFragmentControllerGui" testclass="TestFragmentController" testname="GetPaymentRequestIdByRlId" enabled="false"/>
+      <hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Get DynamoDB record by Id">
+          <stringProp name="HTTPSampler.domain">ppgw.dev.hivexnet.com</stringProp>
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.path">/tools/query-dynamodb</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+    &quot;tableName&quot;: &quot;PPGW-TRANSACTION-TABLE&quot;,&#xd;
+    &quot;partitionKey&quot;: ${rlid}&#xd;
+}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+        </HTTPSamplerProxy>
+        <hashTree/>
+        <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="Get paymentRequestId from response body">
+          <stringProp name="JSONPostProcessor.referenceNames">prid</stringProp>
+          <stringProp name="JSONPostProcessor.jsonPathExprs">$.paymentRequestId</stringProp>
+          <stringProp name="JSONPostProcessor.match_numbers"></stringProp>
+          <stringProp name="JSONPostProcessor.defaultValues">NOT_FOUND</stringProp>
+        </JSONPostProcessor>
+        <hashTree/>
+      </hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Discovery with Valid QR" enabled="false">
         <intProp name="ThreadGroup.num_threads">1</intProp>
         <intProp name="ThreadGroup.ramp_time">1</intProp>
         <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
@@ -667,7 +699,7 @@ System.out.println(prid);</stringProp>
           </collectionProp>
         </ModuleController>
         <hashTree/>
-        <UserParameters guiclass="UserParametersGui" testclass="UserParameters" testname="User Parameters">
+        <UserParameters guiclass="UserParametersGui" testclass="UserParameters" testname="User Parameters" enabled="true">
           <collectionProp name="UserParameters.names">
             <stringProp name="3617">qr</stringProp>
           </collectionProp>
@@ -727,7 +759,7 @@ System.out.println(prid);</stringProp>
         </ResultCollector>
         <hashTree/>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Discovery with nonExist QR" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Discovery with nonExist QR" enabled="false">
         <intProp name="ThreadGroup.num_threads">1</intProp>
         <intProp name="ThreadGroup.ramp_time">1</intProp>
         <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
@@ -746,19 +778,19 @@ System.out.println(prid);</stringProp>
           </collectionProp>
         </ModuleController>
         <hashTree/>
-        <UserParameters guiclass="UserParametersGui" testclass="UserParameters" testname="User Parameters">
+        <UserParameters guiclass="UserParametersGui" testclass="UserParameters" testname="User Parameters" enabled="true">
           <collectionProp name="UserParameters.names">
             <stringProp name="3617">qr</stringProp>
           </collectionProp>
           <collectionProp name="UserParameters.thread_values">
-            <collectionProp name="756982861">
+            <collectionProp name="-432822344">
               <stringProp name="756982830">https://qr.stg.hivexnet.com/28180105abc</stringProp>
             </collectionProp>
           </collectionProp>
           <boolProp name="UserParameters.per_iteration">false</boolProp>
         </UserParameters>
         <hashTree/>
-        <JSR223Assertion guiclass="TestBeanGUI" testclass="JSR223Assertion" testname="Assert 404 response">
+        <JSR223Assertion guiclass="TestBeanGUI" testclass="JSR223Assertion" testname="Assert 404 response" enabled="true">
           <stringProp name="cacheKey">true</stringProp>
           <stringProp name="filename"></stringProp>
           <stringProp name="parameters"></stringProp>
@@ -772,7 +804,7 @@ if (code != &apos;404&apos;) {
           <stringProp name="scriptLanguage">groovy</stringProp>
         </JSR223Assertion>
         <hashTree/>
-        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree">
+        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
           <boolProp name="ResultCollector.error_logging">false</boolProp>
           <objProp>
             <name>saveConfig</name>
@@ -829,31 +861,54 @@ if (code != &apos;404&apos;) {
           </collectionProp>
         </ModuleController>
         <hashTree/>
-        <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="Invoice" enabled="true">
-          <collectionProp name="ModuleController.node_path">
-            <stringProp name="764597751">Test Plan</stringProp>
-            <stringProp name="764597751">Test Plan</stringProp>
-            <stringProp name="695556887">GetInvoice</stringProp>
-          </collectionProp>
-        </ModuleController>
-        <hashTree/>
-        <UserParameters guiclass="UserParametersGui" testclass="UserParameters" testname="User Parameters" enabled="true">
+        <UserParameters guiclass="UserParametersGui" testclass="UserParameters" testname="User Parameters">
           <collectionProp name="UserParameters.names">
             <stringProp name="3617">qr</stringProp>
-            <stringProp name="3599307">user</stringProp>
-            <stringProp name="-39436195">invPayload</stringProp>
           </collectionProp>
           <collectionProp name="UserParameters.thread_values">
-            <collectionProp name="-1786349933">
+            <collectionProp name="1257507756">
               <stringProp name="1819092516">https://qr.stg.hivexnet.com/28180105ERXyEjnY7SjnXK0o</stringProp>
-              <stringProp name="-836031825">user-1</stringProp>
-              <stringProp name="170415455">{&quot;amount&quot;:500}</stringProp>
             </collectionProp>
           </collectionProp>
           <boolProp name="UserParameters.per_iteration">false</boolProp>
         </UserParameters>
         <hashTree/>
-        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
+        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Simple Controller"/>
+        <hashTree>
+          <UserParameters guiclass="UserParametersGui" testclass="UserParameters" testname="User Parameters">
+            <collectionProp name="UserParameters.names">
+              <stringProp name="3599307">user</stringProp>
+              <stringProp name="-39436195">invPayload</stringProp>
+            </collectionProp>
+            <collectionProp name="UserParameters.thread_values">
+              <collectionProp name="929474984">
+                <stringProp name="-836031825">user-1</stringProp>
+                <stringProp name="170415455">{&quot;amount&quot;:500}</stringProp>
+              </collectionProp>
+            </collectionProp>
+            <boolProp name="UserParameters.per_iteration">false</boolProp>
+          </UserParameters>
+          <hashTree/>
+          <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="Invoice">
+            <collectionProp name="ModuleController.node_path">
+              <stringProp name="764597751">Test Plan</stringProp>
+              <stringProp name="764597751">Test Plan</stringProp>
+              <stringProp name="695556887">GetInvoice</stringProp>
+            </collectionProp>
+          </ModuleController>
+          <hashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="49587">201</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">16</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+        </hashTree>
+        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree">
           <boolProp name="ResultCollector.error_logging">false</boolProp>
           <objProp>
             <name>saveConfig</name>
@@ -910,30 +965,53 @@ if (code != &apos;404&apos;) {
           </collectionProp>
         </ModuleController>
         <hashTree/>
-        <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="Invoice" enabled="true">
-          <collectionProp name="ModuleController.node_path">
-            <stringProp name="764597751">Test Plan</stringProp>
-            <stringProp name="764597751">Test Plan</stringProp>
-            <stringProp name="695556887">GetInvoice</stringProp>
-          </collectionProp>
-        </ModuleController>
-        <hashTree/>
         <UserParameters guiclass="UserParametersGui" testclass="UserParameters" testname="User Parameters" enabled="true">
           <collectionProp name="UserParameters.names">
             <stringProp name="3617">qr</stringProp>
-            <stringProp name="3599307">user</stringProp>
-            <stringProp name="-39436195">invPayload</stringProp>
           </collectionProp>
           <collectionProp name="UserParameters.thread_values">
-            <collectionProp name="-35285561">
+            <collectionProp name="1257507756">
               <stringProp name="1819092516">https://qr.stg.hivexnet.com/28180105ERXyEjnY7SjnXK0o</stringProp>
-              <stringProp name="92599395">abcde</stringProp>
-              <stringProp name="170415455">{&quot;amount&quot;:500}</stringProp>
             </collectionProp>
           </collectionProp>
           <boolProp name="UserParameters.per_iteration">false</boolProp>
         </UserParameters>
         <hashTree/>
+        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Simple Controller" enabled="true"/>
+        <hashTree>
+          <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="Invoice" enabled="true">
+            <collectionProp name="ModuleController.node_path">
+              <stringProp name="764597751">Test Plan</stringProp>
+              <stringProp name="764597751">Test Plan</stringProp>
+              <stringProp name="695556887">GetInvoice</stringProp>
+            </collectionProp>
+          </ModuleController>
+          <hashTree/>
+          <UserParameters guiclass="UserParametersGui" testclass="UserParameters" testname="User Parameters" enabled="true">
+            <collectionProp name="UserParameters.names">
+              <stringProp name="3599307">user</stringProp>
+              <stringProp name="-39436195">invPayload</stringProp>
+            </collectionProp>
+            <collectionProp name="UserParameters.thread_values">
+              <collectionProp name="-1614427940">
+                <stringProp name="92599395">abcde</stringProp>
+                <stringProp name="170415455">{&quot;amount&quot;:500}</stringProp>
+              </collectionProp>
+            </collectionProp>
+            <boolProp name="UserParameters.per_iteration">false</boolProp>
+          </UserParameters>
+          <hashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="51512">404</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
+            <boolProp name="Assertion.assume_success">true</boolProp>
+            <intProp name="Assertion.test_type">8</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+        </hashTree>
         <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
           <boolProp name="ResultCollector.error_logging">false</boolProp>
           <objProp>
@@ -983,40 +1061,43 @@ if (code != &apos;404&apos;) {
         </elementProp>
       </ThreadGroup>
       <hashTree>
-        <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="Discovery" enabled="true">
-          <collectionProp name="ModuleController.node_path">
-            <stringProp name="764597751">Test Plan</stringProp>
-            <stringProp name="764597751">Test Plan</stringProp>
-            <stringProp name="1882760592">Discovery</stringProp>
-          </collectionProp>
-        </ModuleController>
-        <hashTree/>
-        <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="Invoice" enabled="true">
-          <collectionProp name="ModuleController.node_path">
-            <stringProp name="764597751">Test Plan</stringProp>
-            <stringProp name="764597751">Test Plan</stringProp>
-            <stringProp name="695556887">GetInvoice</stringProp>
-          </collectionProp>
-        </ModuleController>
-        <hashTree/>
-        <UserParameters guiclass="UserParametersGui" testclass="UserParameters" testname="User Parameters" enabled="true">
-          <collectionProp name="UserParameters.names">
-            <stringProp name="3617">qr</stringProp>
-            <stringProp name="3599307">user</stringProp>
-            <stringProp name="-39436195">invPayload</stringProp>
-            <stringProp name="3503317">rlid</stringProp>
-          </collectionProp>
-          <collectionProp name="UserParameters.thread_values">
-            <collectionProp name="-975139835">
-              <stringProp name="97">a</stringProp>
-              <stringProp name="-836031825">user-1</stringProp>
-              <stringProp name="170415455">{&quot;amount&quot;:500}</stringProp>
-              <stringProp name="3556498">test</stringProp>
+        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Simple Controller" enabled="true"/>
+        <hashTree>
+          <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="Invoice" enabled="true">
+            <collectionProp name="ModuleController.node_path">
+              <stringProp name="764597751">Test Plan</stringProp>
+              <stringProp name="764597751">Test Plan</stringProp>
+              <stringProp name="695556887">GetInvoice</stringProp>
             </collectionProp>
-          </collectionProp>
-          <boolProp name="UserParameters.per_iteration">false</boolProp>
-        </UserParameters>
-        <hashTree/>
+          </ModuleController>
+          <hashTree/>
+          <UserParameters guiclass="UserParametersGui" testclass="UserParameters" testname="User Parameters" enabled="true">
+            <collectionProp name="UserParameters.names">
+              <stringProp name="3599307">user</stringProp>
+              <stringProp name="-39436195">invPayload</stringProp>
+              <stringProp name="3503317">rlid</stringProp>
+            </collectionProp>
+            <collectionProp name="UserParameters.thread_values">
+              <collectionProp name="-1274418341">
+                <stringProp name="-836031825">user-1</stringProp>
+                <stringProp name="170415455">{&quot;amount&quot;:500}</stringProp>
+                <stringProp name="2603186">Test</stringProp>
+              </collectionProp>
+            </collectionProp>
+            <boolProp name="UserParameters.per_iteration">false</boolProp>
+          </UserParameters>
+          <hashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="51508">400</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
+            <boolProp name="Assertion.assume_success">true</boolProp>
+            <intProp name="Assertion.test_type">8</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+        </hashTree>
         <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
           <boolProp name="ResultCollector.error_logging">false</boolProp>
           <objProp>
@@ -1082,14 +1163,6 @@ if (code != &apos;404&apos;) {
           </collectionProp>
         </ModuleController>
         <hashTree/>
-        <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="Invoice" enabled="true">
-          <collectionProp name="ModuleController.node_path">
-            <stringProp name="764597751">Test Plan</stringProp>
-            <stringProp name="764597751">Test Plan</stringProp>
-            <stringProp name="695556887">GetInvoice</stringProp>
-          </collectionProp>
-        </ModuleController>
-        <hashTree/>
         <UserParameters guiclass="UserParametersGui" testclass="UserParameters" testname="User Parameters" enabled="true">
           <collectionProp name="UserParameters.names">
             <stringProp name="3617">qr</stringProp>
@@ -1106,6 +1179,41 @@ if (code != &apos;404&apos;) {
           <boolProp name="UserParameters.per_iteration">false</boolProp>
         </UserParameters>
         <hashTree/>
+        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Simple Controller" enabled="true"/>
+        <hashTree>
+          <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="Invoice" enabled="true">
+            <collectionProp name="ModuleController.node_path">
+              <stringProp name="764597751">Test Plan</stringProp>
+              <stringProp name="764597751">Test Plan</stringProp>
+              <stringProp name="695556887">GetInvoice</stringProp>
+            </collectionProp>
+          </ModuleController>
+          <hashTree/>
+          <UserParameters guiclass="UserParametersGui" testclass="UserParameters" testname="User Parameters" enabled="true">
+            <collectionProp name="UserParameters.names">
+              <stringProp name="3599307">user</stringProp>
+              <stringProp name="-39436195">invPayload</stringProp>
+            </collectionProp>
+            <collectionProp name="UserParameters.thread_values">
+              <collectionProp name="929474984">
+                <stringProp name="-836031825">user-1</stringProp>
+                <stringProp name="170415455">{&quot;amount&quot;:500}</stringProp>
+              </collectionProp>
+            </collectionProp>
+            <boolProp name="UserParameters.per_iteration">false</boolProp>
+          </UserParameters>
+          <hashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="51508">400</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
+            <boolProp name="Assertion.assume_success">true</boolProp>
+            <intProp name="Assertion.test_type">16</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+        </hashTree>
         <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
           <boolProp name="ResultCollector.error_logging">false</boolProp>
           <objProp>
@@ -1171,30 +1279,53 @@ if (code != &apos;404&apos;) {
           </collectionProp>
         </ModuleController>
         <hashTree/>
-        <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="Invoice" enabled="true">
-          <collectionProp name="ModuleController.node_path">
-            <stringProp name="764597751">Test Plan</stringProp>
-            <stringProp name="764597751">Test Plan</stringProp>
-            <stringProp name="695556887">GetInvoice</stringProp>
-          </collectionProp>
-        </ModuleController>
-        <hashTree/>
         <UserParameters guiclass="UserParametersGui" testclass="UserParameters" testname="User Parameters" enabled="true">
           <collectionProp name="UserParameters.names">
             <stringProp name="3617">qr</stringProp>
-            <stringProp name="3599307">user</stringProp>
-            <stringProp name="-39436195">invPayload</stringProp>
           </collectionProp>
           <collectionProp name="UserParameters.thread_values">
-            <collectionProp name="-1786349933">
+            <collectionProp name="1257507756">
               <stringProp name="1819092516">https://qr.stg.hivexnet.com/28180105ERXyEjnY7SjnXK0o</stringProp>
-              <stringProp name="-836031825">user-1</stringProp>
-              <stringProp name="170415455">{&quot;amount&quot;:500}</stringProp>
             </collectionProp>
           </collectionProp>
           <boolProp name="UserParameters.per_iteration">false</boolProp>
         </UserParameters>
         <hashTree/>
+        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Simple Controller" enabled="true"/>
+        <hashTree>
+          <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="Invoice" enabled="true">
+            <collectionProp name="ModuleController.node_path">
+              <stringProp name="764597751">Test Plan</stringProp>
+              <stringProp name="764597751">Test Plan</stringProp>
+              <stringProp name="695556887">GetInvoice</stringProp>
+            </collectionProp>
+          </ModuleController>
+          <hashTree/>
+          <UserParameters guiclass="UserParametersGui" testclass="UserParameters" testname="User Parameters" enabled="true">
+            <collectionProp name="UserParameters.names">
+              <stringProp name="3599307">user</stringProp>
+              <stringProp name="-39436195">invPayload</stringProp>
+            </collectionProp>
+            <collectionProp name="UserParameters.thread_values">
+              <collectionProp name="929474984">
+                <stringProp name="-836031825">user-1</stringProp>
+                <stringProp name="170415455">{&quot;amount&quot;:500}</stringProp>
+              </collectionProp>
+            </collectionProp>
+            <boolProp name="UserParameters.per_iteration">false</boolProp>
+          </UserParameters>
+          <hashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="51508">400</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
+            <boolProp name="Assertion.assume_success">true</boolProp>
+            <intProp name="Assertion.test_type">16</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+        </hashTree>
         <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
           <boolProp name="ResultCollector.error_logging">false</boolProp>
           <objProp>
@@ -1260,14 +1391,6 @@ if (code != &apos;404&apos;) {
           </collectionProp>
         </ModuleController>
         <hashTree/>
-        <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="Invoice" enabled="true">
-          <collectionProp name="ModuleController.node_path">
-            <stringProp name="764597751">Test Plan</stringProp>
-            <stringProp name="764597751">Test Plan</stringProp>
-            <stringProp name="695556887">GetInvoice</stringProp>
-          </collectionProp>
-        </ModuleController>
-        <hashTree/>
         <UserParameters guiclass="UserParametersGui" testclass="UserParameters" testname="User Parameters" enabled="true">
           <collectionProp name="UserParameters.names">
             <stringProp name="3617">qr</stringProp>
@@ -1284,138 +1407,42 @@ if (code != &apos;404&apos;) {
           <boolProp name="UserParameters.per_iteration">false</boolProp>
         </UserParameters>
         <hashTree/>
-        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
-          <boolProp name="ResultCollector.error_logging">false</boolProp>
-          <objProp>
-            <name>saveConfig</name>
-            <value class="SampleSaveConfiguration">
-              <time>true</time>
-              <latency>true</latency>
-              <timestamp>true</timestamp>
-              <success>true</success>
-              <label>true</label>
-              <code>true</code>
-              <message>true</message>
-              <threadName>true</threadName>
-              <dataType>true</dataType>
-              <encoding>false</encoding>
-              <assertions>true</assertions>
-              <subresults>true</subresults>
-              <responseData>false</responseData>
-              <samplerData>false</samplerData>
-              <xml>false</xml>
-              <fieldNames>true</fieldNames>
-              <responseHeaders>false</responseHeaders>
-              <requestHeaders>false</requestHeaders>
-              <responseDataOnError>false</responseDataOnError>
-              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
-              <assertionsResultsToSave>0</assertionsResultsToSave>
-              <bytes>true</bytes>
-              <sentBytes>true</sentBytes>
-              <url>true</url>
-              <threadCounts>true</threadCounts>
-              <idleTime>true</idleTime>
-              <connectTime>true</connectTime>
-            </value>
-          </objProp>
-          <stringProp name="filename"></stringProp>
-        </ResultCollector>
-        <hashTree/>
-      </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Discovery with Valid  timeout  Invoice" enabled="false">
-        <intProp name="ThreadGroup.num_threads">1</intProp>
-        <intProp name="ThreadGroup.ramp_time">1</intProp>
-        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
-        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
-        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller">
-          <stringProp name="LoopController.loops">1</stringProp>
-          <boolProp name="LoopController.continue_forever">false</boolProp>
-        </elementProp>
-      </ThreadGroup>
-      <hashTree>
-        <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="Discovery" enabled="true">
-          <collectionProp name="ModuleController.node_path">
-            <stringProp name="764597751">Test Plan</stringProp>
-            <stringProp name="764597751">Test Plan</stringProp>
-            <stringProp name="1882760592">Discovery</stringProp>
-          </collectionProp>
-        </ModuleController>
-        <hashTree/>
-        <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="Invoice" enabled="true">
-          <collectionProp name="ModuleController.node_path">
-            <stringProp name="764597751">Test Plan</stringProp>
-            <stringProp name="764597751">Test Plan</stringProp>
-            <stringProp name="695556887">GetInvoice</stringProp>
-          </collectionProp>
-        </ModuleController>
-        <hashTree/>
-        <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="JSR223 Sampler" enabled="false">
-          <stringProp name="cacheKey">true</stringProp>
-          <stringProp name="filename"></stringProp>
-          <stringProp name="parameters"></stringProp>
-          <stringProp name="script">Thread.sleep(3000);</stringProp>
-          <stringProp name="scriptLanguage">groovy</stringProp>
-        </JSR223Sampler>
-        <hashTree/>
-        <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="Query PRid" enabled="true">
-          <collectionProp name="ModuleController.node_path">
-            <stringProp name="764597751">Test Plan</stringProp>
-            <stringProp name="764597751">Test Plan</stringProp>
-            <stringProp name="-711096980">QueryPaymentRequestId</stringProp>
-          </collectionProp>
-        </ModuleController>
-        <hashTree/>
-        <RunTime guiclass="RunTimeGui" testclass="RunTime" testname="Runtime Controller" enabled="true">
-          <stringProp name="RunTime.seconds">600</stringProp>
-        </RunTime>
+        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Simple Controller"/>
         <hashTree>
-          <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="acquirer query" enabled="true">
+          <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="Invoice" enabled="true">
             <collectionProp name="ModuleController.node_path">
               <stringProp name="764597751">Test Plan</stringProp>
               <stringProp name="764597751">Test Plan</stringProp>
-              <stringProp name="966142260">PPGW acquirer query</stringProp>
+              <stringProp name="695556887">GetInvoice</stringProp>
             </collectionProp>
           </ModuleController>
           <hashTree/>
-          <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="JSON Assertion" enabled="true">
-            <stringProp name="JSON_PATH">$..paymentResult.resultCode</stringProp>
-            <stringProp name="EXPECTED_VALUE">&quot;PAY_PENDING&quot;</stringProp>
-            <boolProp name="JSONVALIDATION">true</boolProp>
-            <boolProp name="EXPECT_NULL">false</boolProp>
-            <boolProp name="INVERT">false</boolProp>
-            <boolProp name="ISREGEX">false</boolProp>
-          </JSONPathAssertion>
+          <UserParameters guiclass="UserParametersGui" testclass="UserParameters" testname="User Parameters" enabled="true">
+            <collectionProp name="UserParameters.names">
+              <stringProp name="3599307">user</stringProp>
+              <stringProp name="-39436195">invPayload</stringProp>
+            </collectionProp>
+            <collectionProp name="UserParameters.thread_values">
+              <collectionProp name="929474984">
+                <stringProp name="-836031825">user-1</stringProp>
+                <stringProp name="170415455">{&quot;amount&quot;:500}</stringProp>
+              </collectionProp>
+            </collectionProp>
+            <boolProp name="UserParameters.per_iteration">false</boolProp>
+          </UserParameters>
           <hashTree/>
-          <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Constant Timer" enabled="true">
-            <stringProp name="ConstantTimer.delay">3000</stringProp>
-          </ConstantTimer>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="51508">400</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
+            <boolProp name="Assertion.assume_success">true</boolProp>
+            <intProp name="Assertion.test_type">16</intProp>
+          </ResponseAssertion>
           <hashTree/>
         </hashTree>
-        <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="PAY" enabled="false">
-          <collectionProp name="ModuleController.node_path">
-            <stringProp name="764597751">Test Plan</stringProp>
-            <stringProp name="764597751">Test Plan</stringProp>
-            <stringProp name="80008">Pay</stringProp>
-          </collectionProp>
-        </ModuleController>
-        <hashTree/>
-        <UserParameters guiclass="UserParametersGui" testclass="UserParameters" testname="User Parameters" enabled="true">
-          <collectionProp name="UserParameters.names">
-            <stringProp name="3617">qr</stringProp>
-            <stringProp name="3599307">user</stringProp>
-            <stringProp name="-39436195">invPayload</stringProp>
-          </collectionProp>
-          <collectionProp name="UserParameters.thread_values">
-            <collectionProp name="-1786349933">
-              <stringProp name="1819092516">https://qr.stg.hivexnet.com/28180105ERXyEjnY7SjnXK0o</stringProp>
-              <stringProp name="-836031825">user-1</stringProp>
-              <stringProp name="170415455">{&quot;amount&quot;:500}</stringProp>
-            </collectionProp>
-          </collectionProp>
-          <boolProp name="UserParameters.per_iteration">false</boolProp>
-        </UserParameters>
-        <hashTree/>
-        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
+        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree">
           <boolProp name="ResultCollector.error_logging">false</boolProp>
           <objProp>
             <name>saveConfig</name>
@@ -1566,6 +1593,150 @@ if (code != &apos;404&apos;) {
         </ResultCollector>
         <hashTree/>
       </hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Discovery with Valid QR Payment" enabled="false">
+        <intProp name="ThreadGroup.num_threads">1</intProp>
+        <intProp name="ThreadGroup.ramp_time">1</intProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller">
+          <stringProp name="LoopController.loops">1</stringProp>
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+        </elementProp>
+      </ThreadGroup>
+      <hashTree>
+        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Discovery Controller"/>
+        <hashTree>
+          <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="Discovery">
+            <collectionProp name="ModuleController.node_path">
+              <stringProp name="764597751">Test Plan</stringProp>
+              <stringProp name="764597751">Test Plan</stringProp>
+              <stringProp name="1882760592">Discovery</stringProp>
+            </collectionProp>
+          </ModuleController>
+          <hashTree/>
+          <UserParameters guiclass="UserParametersGui" testclass="UserParameters" testname="User Parameters">
+            <collectionProp name="UserParameters.names">
+              <stringProp name="3617">qr</stringProp>
+            </collectionProp>
+            <collectionProp name="UserParameters.thread_values">
+              <collectionProp name="1257507756">
+                <stringProp name="1819092516">https://qr.stg.hivexnet.com/28180105ERXyEjnY7SjnXK0o</stringProp>
+              </collectionProp>
+            </collectionProp>
+            <boolProp name="UserParameters.per_iteration">false</boolProp>
+          </UserParameters>
+          <hashTree/>
+        </hashTree>
+        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Invoice Controller"/>
+        <hashTree>
+          <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="Invoice">
+            <collectionProp name="ModuleController.node_path">
+              <stringProp name="764597751">Test Plan</stringProp>
+              <stringProp name="764597751">Test Plan</stringProp>
+              <stringProp name="695556887">GetInvoice</stringProp>
+            </collectionProp>
+          </ModuleController>
+          <hashTree/>
+          <UserParameters guiclass="UserParametersGui" testclass="UserParameters" testname="User Parameters">
+            <collectionProp name="UserParameters.names">
+              <stringProp name="3599307">user</stringProp>
+              <stringProp name="-39436195">invPayload</stringProp>
+            </collectionProp>
+            <collectionProp name="UserParameters.thread_values">
+              <collectionProp name="929474984">
+                <stringProp name="-836031825">user-1</stringProp>
+                <stringProp name="170415455">{&quot;amount&quot;:500}</stringProp>
+              </collectionProp>
+            </collectionProp>
+            <boolProp name="UserParameters.per_iteration">false</boolProp>
+          </UserParameters>
+          <hashTree/>
+        </hashTree>
+        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="User Pay Controller"/>
+        <hashTree>
+          <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="PAY">
+            <collectionProp name="ModuleController.node_path">
+              <stringProp name="764597751">Test Plan</stringProp>
+              <stringProp name="764597751">Test Plan</stringProp>
+              <stringProp name="80008">Pay</stringProp>
+            </collectionProp>
+          </ModuleController>
+          <hashTree/>
+        </hashTree>
+        <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="Get PaymentRequestId">
+          <collectionProp name="ModuleController.node_path">
+            <stringProp name="764597751">Test Plan</stringProp>
+            <stringProp name="764597751">Test Plan</stringProp>
+            <stringProp name="428347014">GetPaymentRequestIdByRlId</stringProp>
+          </collectionProp>
+        </ModuleController>
+        <hashTree/>
+        <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="Delay 5 seconds">
+          <stringProp name="scriptLanguage">groovy</stringProp>
+          <stringProp name="parameters"></stringProp>
+          <stringProp name="filename"></stringProp>
+          <stringProp name="cacheKey">true</stringProp>
+          <stringProp name="script">Thread.sleep(5000)</stringProp>
+        </JSR223Sampler>
+        <hashTree/>
+        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Acquire Query Controller"/>
+        <hashTree>
+          <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="acquire query">
+            <collectionProp name="ModuleController.node_path">
+              <stringProp name="764597751">Test Plan</stringProp>
+              <stringProp name="764597751">Test Plan</stringProp>
+              <stringProp name="966142260">PPGW acquirer query</stringProp>
+            </collectionProp>
+          </ModuleController>
+          <hashTree/>
+          <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="Expecting PAY_COMPLETED">
+            <stringProp name="JSON_PATH">$..paymentResult.resultCode</stringProp>
+            <stringProp name="EXPECTED_VALUE">&quot;PAY_COMPLETED&quot;</stringProp>
+            <boolProp name="JSONVALIDATION">true</boolProp>
+            <boolProp name="EXPECT_NULL">false</boolProp>
+            <boolProp name="INVERT">false</boolProp>
+            <boolProp name="ISREGEX">false</boolProp>
+          </JSONPathAssertion>
+          <hashTree/>
+        </hashTree>
+        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <url>true</url>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+      </hashTree>
       <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Discovery with Valid  QR u_terminate" enabled="false">
         <intProp name="ThreadGroup.num_threads">1</intProp>
         <intProp name="ThreadGroup.ramp_time">1</intProp>
@@ -1577,31 +1748,55 @@ if (code != &apos;404&apos;) {
         </elementProp>
       </ThreadGroup>
       <hashTree>
-        <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="Discovery" enabled="true">
-          <collectionProp name="ModuleController.node_path">
-            <stringProp name="764597751">Test Plan</stringProp>
-            <stringProp name="764597751">Test Plan</stringProp>
-            <stringProp name="1882760592">Discovery</stringProp>
-          </collectionProp>
-        </ModuleController>
-        <hashTree/>
-        <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="Invoice" enabled="true">
-          <collectionProp name="ModuleController.node_path">
-            <stringProp name="764597751">Test Plan</stringProp>
-            <stringProp name="764597751">Test Plan</stringProp>
-            <stringProp name="695556887">GetInvoice</stringProp>
-          </collectionProp>
-        </ModuleController>
-        <hashTree/>
-        <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="Query PRid" enabled="true">
-          <collectionProp name="ModuleController.node_path">
-            <stringProp name="764597751">Test Plan</stringProp>
-            <stringProp name="764597751">Test Plan</stringProp>
-            <stringProp name="-711096980">QueryPaymentRequestId</stringProp>
-          </collectionProp>
-        </ModuleController>
-        <hashTree/>
-        <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="u_teminate" enabled="true">
+        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Discovery Controller"/>
+        <hashTree>
+          <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="Discovery">
+            <collectionProp name="ModuleController.node_path">
+              <stringProp name="764597751">Test Plan</stringProp>
+              <stringProp name="764597751">Test Plan</stringProp>
+              <stringProp name="1882760592">Discovery</stringProp>
+            </collectionProp>
+          </ModuleController>
+          <hashTree/>
+          <UserParameters guiclass="UserParametersGui" testclass="UserParameters" testname="User Parameters">
+            <collectionProp name="UserParameters.names">
+              <stringProp name="3617">qr</stringProp>
+            </collectionProp>
+            <collectionProp name="UserParameters.thread_values">
+              <collectionProp name="1257507756">
+                <stringProp name="1819092516">https://qr.stg.hivexnet.com/28180105ERXyEjnY7SjnXK0o</stringProp>
+              </collectionProp>
+            </collectionProp>
+            <boolProp name="UserParameters.per_iteration">false</boolProp>
+          </UserParameters>
+          <hashTree/>
+        </hashTree>
+        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Invoice Controller"/>
+        <hashTree>
+          <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="Invoice">
+            <collectionProp name="ModuleController.node_path">
+              <stringProp name="764597751">Test Plan</stringProp>
+              <stringProp name="764597751">Test Plan</stringProp>
+              <stringProp name="695556887">GetInvoice</stringProp>
+            </collectionProp>
+          </ModuleController>
+          <hashTree/>
+          <UserParameters guiclass="UserParametersGui" testclass="UserParameters" testname="User Parameters">
+            <collectionProp name="UserParameters.names">
+              <stringProp name="3599307">user</stringProp>
+              <stringProp name="-39436195">invPayload</stringProp>
+            </collectionProp>
+            <collectionProp name="UserParameters.thread_values">
+              <collectionProp name="929474984">
+                <stringProp name="-836031825">user-1</stringProp>
+                <stringProp name="170415455">{&quot;amount&quot;:500}</stringProp>
+              </collectionProp>
+            </collectionProp>
+            <boolProp name="UserParameters.per_iteration">false</boolProp>
+          </UserParameters>
+          <hashTree/>
+        </hashTree>
+        <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="u_teminate">
           <collectionProp name="ModuleController.node_path">
             <stringProp name="764597751">Test Plan</stringProp>
             <stringProp name="764597751">Test Plan</stringProp>
@@ -1609,7 +1804,7 @@ if (code != &apos;404&apos;) {
           </collectionProp>
         </ModuleController>
         <hashTree/>
-        <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="JSR223 Sampler" enabled="true">
+        <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="Delay 3 seconds">
           <stringProp name="cacheKey">true</stringProp>
           <stringProp name="filename"></stringProp>
           <stringProp name="parameters"></stringProp>
@@ -1617,31 +1812,35 @@ if (code != &apos;404&apos;) {
           <stringProp name="scriptLanguage">groovy</stringProp>
         </JSR223Sampler>
         <hashTree/>
-        <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="acquirer query" enabled="true">
+        <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="Get PaymentRequestId">
           <collectionProp name="ModuleController.node_path">
             <stringProp name="764597751">Test Plan</stringProp>
             <stringProp name="764597751">Test Plan</stringProp>
-            <stringProp name="966142260">PPGW acquirer query</stringProp>
+            <stringProp name="428347014">GetPaymentRequestIdByRlId</stringProp>
           </collectionProp>
         </ModuleController>
         <hashTree/>
-        <UserParameters guiclass="UserParametersGui" testclass="UserParameters" testname="User Parameters" enabled="true">
-          <collectionProp name="UserParameters.names">
-            <stringProp name="3617">qr</stringProp>
-            <stringProp name="3599307">user</stringProp>
-            <stringProp name="-39436195">invPayload</stringProp>
-          </collectionProp>
-          <collectionProp name="UserParameters.thread_values">
-            <collectionProp name="-1786349933">
-              <stringProp name="1819092516">https://qr.stg.hivexnet.com/28180105ERXyEjnY7SjnXK0o</stringProp>
-              <stringProp name="-836031825">user-1</stringProp>
-              <stringProp name="170415455">{&quot;amount&quot;:500}</stringProp>
+        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Acquire Query Controller"/>
+        <hashTree>
+          <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="acquire query">
+            <collectionProp name="ModuleController.node_path">
+              <stringProp name="764597751">Test Plan</stringProp>
+              <stringProp name="764597751">Test Plan</stringProp>
+              <stringProp name="966142260">PPGW acquirer query</stringProp>
             </collectionProp>
-          </collectionProp>
-          <boolProp name="UserParameters.per_iteration">false</boolProp>
-        </UserParameters>
-        <hashTree/>
-        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
+          </ModuleController>
+          <hashTree/>
+          <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="Expecting PAY_FAILED">
+            <stringProp name="JSON_PATH">$..paymentResult.resultCode</stringProp>
+            <stringProp name="EXPECTED_VALUE">&quot;PAY_FAILED&quot;</stringProp>
+            <boolProp name="JSONVALIDATION">true</boolProp>
+            <boolProp name="EXPECT_NULL">false</boolProp>
+            <boolProp name="INVERT">false</boolProp>
+            <boolProp name="ISREGEX">false</boolProp>
+          </JSONPathAssertion>
+          <hashTree/>
+        </hashTree>
+        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree">
           <boolProp name="ResultCollector.error_logging">false</boolProp>
           <objProp>
             <name>saveConfig</name>
@@ -1690,31 +1889,55 @@ if (code != &apos;404&apos;) {
         </elementProp>
       </ThreadGroup>
       <hashTree>
-        <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="Discovery" enabled="true">
-          <collectionProp name="ModuleController.node_path">
-            <stringProp name="764597751">Test Plan</stringProp>
-            <stringProp name="764597751">Test Plan</stringProp>
-            <stringProp name="1882760592">Discovery</stringProp>
-          </collectionProp>
-        </ModuleController>
-        <hashTree/>
-        <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="Invoice" enabled="true">
-          <collectionProp name="ModuleController.node_path">
-            <stringProp name="764597751">Test Plan</stringProp>
-            <stringProp name="764597751">Test Plan</stringProp>
-            <stringProp name="695556887">GetInvoice</stringProp>
-          </collectionProp>
-        </ModuleController>
-        <hashTree/>
-        <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="Query PRid" enabled="true">
-          <collectionProp name="ModuleController.node_path">
-            <stringProp name="764597751">Test Plan</stringProp>
-            <stringProp name="764597751">Test Plan</stringProp>
-            <stringProp name="-711096980">QueryPaymentRequestId</stringProp>
-          </collectionProp>
-        </ModuleController>
-        <hashTree/>
-        <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="ms_terminate" enabled="true">
+        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Discovery Controller"/>
+        <hashTree>
+          <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="Discovery">
+            <collectionProp name="ModuleController.node_path">
+              <stringProp name="764597751">Test Plan</stringProp>
+              <stringProp name="764597751">Test Plan</stringProp>
+              <stringProp name="1882760592">Discovery</stringProp>
+            </collectionProp>
+          </ModuleController>
+          <hashTree/>
+          <UserParameters guiclass="UserParametersGui" testclass="UserParameters" testname="User Parameters">
+            <collectionProp name="UserParameters.names">
+              <stringProp name="3617">qr</stringProp>
+            </collectionProp>
+            <collectionProp name="UserParameters.thread_values">
+              <collectionProp name="1257507756">
+                <stringProp name="1819092516">https://qr.stg.hivexnet.com/28180105ERXyEjnY7SjnXK0o</stringProp>
+              </collectionProp>
+            </collectionProp>
+            <boolProp name="UserParameters.per_iteration">false</boolProp>
+          </UserParameters>
+          <hashTree/>
+        </hashTree>
+        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Invoice Controller"/>
+        <hashTree>
+          <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="Invoice">
+            <collectionProp name="ModuleController.node_path">
+              <stringProp name="764597751">Test Plan</stringProp>
+              <stringProp name="764597751">Test Plan</stringProp>
+              <stringProp name="695556887">GetInvoice</stringProp>
+            </collectionProp>
+          </ModuleController>
+          <hashTree/>
+          <UserParameters guiclass="UserParametersGui" testclass="UserParameters" testname="User Parameters">
+            <collectionProp name="UserParameters.names">
+              <stringProp name="3599307">user</stringProp>
+              <stringProp name="-39436195">invPayload</stringProp>
+            </collectionProp>
+            <collectionProp name="UserParameters.thread_values">
+              <collectionProp name="929474984">
+                <stringProp name="-836031825">user-1</stringProp>
+                <stringProp name="170415455">{&quot;amount&quot;:500}</stringProp>
+              </collectionProp>
+            </collectionProp>
+            <boolProp name="UserParameters.per_iteration">false</boolProp>
+          </UserParameters>
+          <hashTree/>
+        </hashTree>
+        <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="ms_terminate">
           <collectionProp name="ModuleController.node_path">
             <stringProp name="764597751">Test Plan</stringProp>
             <stringProp name="764597751">Test Plan</stringProp>
@@ -1722,7 +1945,7 @@ if (code != &apos;404&apos;) {
           </collectionProp>
         </ModuleController>
         <hashTree/>
-        <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="JSR223 Sampler" enabled="true">
+        <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="Delay 3 seconds">
           <stringProp name="cacheKey">true</stringProp>
           <stringProp name="filename"></stringProp>
           <stringProp name="parameters"></stringProp>
@@ -1730,31 +1953,35 @@ if (code != &apos;404&apos;) {
           <stringProp name="scriptLanguage">groovy</stringProp>
         </JSR223Sampler>
         <hashTree/>
-        <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="acquirer query" enabled="true">
+        <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="Get PaymentRequestId">
           <collectionProp name="ModuleController.node_path">
             <stringProp name="764597751">Test Plan</stringProp>
             <stringProp name="764597751">Test Plan</stringProp>
-            <stringProp name="966142260">PPGW acquirer query</stringProp>
+            <stringProp name="428347014">GetPaymentRequestIdByRlId</stringProp>
           </collectionProp>
         </ModuleController>
         <hashTree/>
-        <UserParameters guiclass="UserParametersGui" testclass="UserParameters" testname="User Parameters" enabled="true">
-          <collectionProp name="UserParameters.names">
-            <stringProp name="3617">qr</stringProp>
-            <stringProp name="3599307">user</stringProp>
-            <stringProp name="-39436195">invPayload</stringProp>
-          </collectionProp>
-          <collectionProp name="UserParameters.thread_values">
-            <collectionProp name="-1786349933">
-              <stringProp name="1819092516">https://qr.stg.hivexnet.com/28180105ERXyEjnY7SjnXK0o</stringProp>
-              <stringProp name="-836031825">user-1</stringProp>
-              <stringProp name="170415455">{&quot;amount&quot;:500}</stringProp>
+        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Acquire Query Controller"/>
+        <hashTree>
+          <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="acquire query">
+            <collectionProp name="ModuleController.node_path">
+              <stringProp name="764597751">Test Plan</stringProp>
+              <stringProp name="764597751">Test Plan</stringProp>
+              <stringProp name="966142260">PPGW acquirer query</stringProp>
             </collectionProp>
-          </collectionProp>
-          <boolProp name="UserParameters.per_iteration">false</boolProp>
-        </UserParameters>
-        <hashTree/>
-        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
+          </ModuleController>
+          <hashTree/>
+          <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="Expecting PAY_FAILED">
+            <stringProp name="JSON_PATH">$..paymentResult.resultCode</stringProp>
+            <stringProp name="EXPECTED_VALUE">&quot;PAY_FAILED&quot;</stringProp>
+            <boolProp name="JSONVALIDATION">true</boolProp>
+            <boolProp name="EXPECT_NULL">false</boolProp>
+            <boolProp name="INVERT">false</boolProp>
+            <boolProp name="ISREGEX">false</boolProp>
+          </JSONPathAssertion>
+          <hashTree/>
+        </hashTree>
+        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree">
           <boolProp name="ResultCollector.error_logging">false</boolProp>
           <objProp>
             <name>saveConfig</name>
@@ -1803,27 +2030,8 @@ if (code != &apos;404&apos;) {
         </elementProp>
       </ThreadGroup>
       <hashTree>
-        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Simple Controller" enabled="true"/>
+        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Discovery Controller"/>
         <hashTree>
-          <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="Msid check" enabled="true">
-            <stringProp name="JSON_PATH">$..msId</stringProp>
-            <stringProp name="EXPECTED_VALUE">123</stringProp>
-            <boolProp name="JSONVALIDATION">true</boolProp>
-            <boolProp name="EXPECT_NULL">false</boolProp>
-            <boolProp name="INVERT">false</boolProp>
-            <boolProp name="ISREGEX">true</boolProp>
-          </JSONPathAssertion>
-          <hashTree/>
-          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Disc Assert" enabled="true">
-            <collectionProp name="Asserion.test_strings">
-              <stringProp name="51508">400</stringProp>
-            </collectionProp>
-            <stringProp name="Assertion.custom_message"></stringProp>
-            <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
-            <boolProp name="Assertion.assume_success">false</boolProp>
-            <intProp name="Assertion.test_type">8</intProp>
-          </ResponseAssertion>
-          <hashTree/>
           <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="Discovery" enabled="true">
             <collectionProp name="ModuleController.node_path">
               <stringProp name="764597751">Test Plan</stringProp>
@@ -1832,8 +2040,20 @@ if (code != &apos;404&apos;) {
             </collectionProp>
           </ModuleController>
           <hashTree/>
+          <UserParameters guiclass="UserParametersGui" testclass="UserParameters" testname="User Parameters" enabled="true">
+            <collectionProp name="UserParameters.names">
+              <stringProp name="3617">qr</stringProp>
+            </collectionProp>
+            <collectionProp name="UserParameters.thread_values">
+              <collectionProp name="1257507756">
+                <stringProp name="1819092516">https://qr.stg.hivexnet.com/28180105ERXyEjnY7SjnXK0o</stringProp>
+              </collectionProp>
+            </collectionProp>
+            <boolProp name="UserParameters.per_iteration">false</boolProp>
+          </UserParameters>
+          <hashTree/>
         </hashTree>
-        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Simple Controller" enabled="true"/>
+        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Invoice Controller"/>
         <hashTree>
           <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="Invoice" enabled="true">
             <collectionProp name="ModuleController.node_path">
@@ -1843,22 +2063,26 @@ if (code != &apos;404&apos;) {
             </collectionProp>
           </ModuleController>
           <hashTree/>
-          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Inv Assert" enabled="true">
-            <collectionProp name="Asserion.test_strings">
-              <stringProp name="52469">500</stringProp>
+          <UserParameters guiclass="UserParametersGui" testclass="UserParameters" testname="User Parameters" enabled="true">
+            <collectionProp name="UserParameters.names">
+              <stringProp name="3599307">user</stringProp>
+              <stringProp name="-39436195">invPayload</stringProp>
             </collectionProp>
-            <stringProp name="Assertion.custom_message"></stringProp>
-            <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
-            <boolProp name="Assertion.assume_success">false</boolProp>
-            <intProp name="Assertion.test_type">8</intProp>
-          </ResponseAssertion>
+            <collectionProp name="UserParameters.thread_values">
+              <collectionProp name="929474984">
+                <stringProp name="-836031825">user-1</stringProp>
+                <stringProp name="170415455">{&quot;amount&quot;:500}</stringProp>
+              </collectionProp>
+            </collectionProp>
+            <boolProp name="UserParameters.per_iteration">false</boolProp>
+          </UserParameters>
           <hashTree/>
         </hashTree>
-        <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="Query PRid" enabled="true">
+        <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="Get PaymentRequestId">
           <collectionProp name="ModuleController.node_path">
             <stringProp name="764597751">Test Plan</stringProp>
             <stringProp name="764597751">Test Plan</stringProp>
-            <stringProp name="-711096980">QueryPaymentRequestId</stringProp>
+            <stringProp name="428347014">GetPaymentRequestIdByRlId</stringProp>
           </collectionProp>
         </ModuleController>
         <hashTree/>
@@ -1870,7 +2094,7 @@ if (code != &apos;404&apos;) {
           </collectionProp>
         </ModuleController>
         <hashTree/>
-        <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="JSR223 Sampler" enabled="true">
+        <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="Delay 3 seconds">
           <stringProp name="cacheKey">true</stringProp>
           <stringProp name="filename"></stringProp>
           <stringProp name="parameters"></stringProp>
@@ -1878,31 +2102,28 @@ if (code != &apos;404&apos;) {
           <stringProp name="scriptLanguage">groovy</stringProp>
         </JSR223Sampler>
         <hashTree/>
-        <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="Refund" enabled="true">
-          <collectionProp name="ModuleController.node_path">
-            <stringProp name="764597751">Test Plan</stringProp>
-            <stringProp name="764597751">Test Plan</stringProp>
-            <stringProp name="-1850946664">Refund</stringProp>
-          </collectionProp>
-        </ModuleController>
-        <hashTree/>
-        <UserParameters guiclass="UserParametersGui" testclass="UserParameters" testname="User Parameters" enabled="true">
-          <collectionProp name="UserParameters.names">
-            <stringProp name="3617">qr</stringProp>
-            <stringProp name="3599307">user</stringProp>
-            <stringProp name="-39436195">invPayload</stringProp>
-          </collectionProp>
-          <collectionProp name="UserParameters.thread_values">
-            <collectionProp name="-1786349933">
-              <stringProp name="1819092516">https://qr.stg.hivexnet.com/28180105ERXyEjnY7SjnXK0o</stringProp>
-              <stringProp name="-836031825">user-1</stringProp>
-              <stringProp name="170415455">{&quot;amount&quot;:500}</stringProp>
+        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Refund Controller"/>
+        <hashTree>
+          <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="Refund">
+            <collectionProp name="ModuleController.node_path">
+              <stringProp name="764597751">Test Plan</stringProp>
+              <stringProp name="764597751">Test Plan</stringProp>
+              <stringProp name="-1850946664">Refund</stringProp>
             </collectionProp>
-          </collectionProp>
-          <boolProp name="UserParameters.per_iteration">false</boolProp>
-        </UserParameters>
-        <hashTree/>
-        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
+          </ModuleController>
+          <hashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="49587">201</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">8</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+        </hashTree>
+        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree">
           <boolProp name="ResultCollector.error_logging">false</boolProp>
           <objProp>
             <name>saveConfig</name>
@@ -1951,27 +2172,59 @@ if (code != &apos;404&apos;) {
         </elementProp>
       </ThreadGroup>
       <hashTree>
-        <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="Discovery" enabled="true">
+        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Discovery Controller"/>
+        <hashTree>
+          <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="Discovery" enabled="true">
+            <collectionProp name="ModuleController.node_path">
+              <stringProp name="764597751">Test Plan</stringProp>
+              <stringProp name="764597751">Test Plan</stringProp>
+              <stringProp name="1882760592">Discovery</stringProp>
+            </collectionProp>
+          </ModuleController>
+          <hashTree/>
+          <UserParameters guiclass="UserParametersGui" testclass="UserParameters" testname="User Parameters" enabled="true">
+            <collectionProp name="UserParameters.names">
+              <stringProp name="3617">qr</stringProp>
+            </collectionProp>
+            <collectionProp name="UserParameters.thread_values">
+              <collectionProp name="1257507756">
+                <stringProp name="1819092516">https://qr.stg.hivexnet.com/28180105ERXyEjnY7SjnXK0o</stringProp>
+              </collectionProp>
+            </collectionProp>
+            <boolProp name="UserParameters.per_iteration">false</boolProp>
+          </UserParameters>
+          <hashTree/>
+        </hashTree>
+        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Invoice Controller"/>
+        <hashTree>
+          <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="Invoice" enabled="true">
+            <collectionProp name="ModuleController.node_path">
+              <stringProp name="764597751">Test Plan</stringProp>
+              <stringProp name="764597751">Test Plan</stringProp>
+              <stringProp name="695556887">GetInvoice</stringProp>
+            </collectionProp>
+          </ModuleController>
+          <hashTree/>
+          <UserParameters guiclass="UserParametersGui" testclass="UserParameters" testname="User Parameters" enabled="true">
+            <collectionProp name="UserParameters.names">
+              <stringProp name="3599307">user</stringProp>
+              <stringProp name="-39436195">invPayload</stringProp>
+            </collectionProp>
+            <collectionProp name="UserParameters.thread_values">
+              <collectionProp name="929474984">
+                <stringProp name="-836031825">user-1</stringProp>
+                <stringProp name="170415455">{&quot;amount&quot;:500}</stringProp>
+              </collectionProp>
+            </collectionProp>
+            <boolProp name="UserParameters.per_iteration">false</boolProp>
+          </UserParameters>
+          <hashTree/>
+        </hashTree>
+        <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="Get PaymentRequestId">
           <collectionProp name="ModuleController.node_path">
             <stringProp name="764597751">Test Plan</stringProp>
             <stringProp name="764597751">Test Plan</stringProp>
-            <stringProp name="1882760592">Discovery</stringProp>
-          </collectionProp>
-        </ModuleController>
-        <hashTree/>
-        <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="Invoice" enabled="true">
-          <collectionProp name="ModuleController.node_path">
-            <stringProp name="764597751">Test Plan</stringProp>
-            <stringProp name="764597751">Test Plan</stringProp>
-            <stringProp name="695556887">GetInvoice</stringProp>
-          </collectionProp>
-        </ModuleController>
-        <hashTree/>
-        <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="Query PRid" enabled="true">
-          <collectionProp name="ModuleController.node_path">
-            <stringProp name="764597751">Test Plan</stringProp>
-            <stringProp name="764597751">Test Plan</stringProp>
-            <stringProp name="-711096980">QueryPaymentRequestId</stringProp>
+            <stringProp name="428347014">GetPaymentRequestIdByRlId</stringProp>
           </collectionProp>
         </ModuleController>
         <hashTree/>
@@ -1983,7 +2236,7 @@ if (code != &apos;404&apos;) {
           </collectionProp>
         </ModuleController>
         <hashTree/>
-        <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="JSR223 Sampler" enabled="true">
+        <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="Delay 3 seconds">
           <stringProp name="cacheKey">true</stringProp>
           <stringProp name="filename"></stringProp>
           <stringProp name="parameters"></stringProp>
@@ -1991,31 +2244,28 @@ if (code != &apos;404&apos;) {
           <stringProp name="scriptLanguage">groovy</stringProp>
         </JSR223Sampler>
         <hashTree/>
-        <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="Cancel" enabled="true">
-          <collectionProp name="ModuleController.node_path">
-            <stringProp name="764597751">Test Plan</stringProp>
-            <stringProp name="764597751">Test Plan</stringProp>
-            <stringProp name="2011110042">Cancel</stringProp>
-          </collectionProp>
-        </ModuleController>
-        <hashTree/>
-        <UserParameters guiclass="UserParametersGui" testclass="UserParameters" testname="User Parameters" enabled="true">
-          <collectionProp name="UserParameters.names">
-            <stringProp name="3617">qr</stringProp>
-            <stringProp name="3599307">user</stringProp>
-            <stringProp name="-39436195">invPayload</stringProp>
-          </collectionProp>
-          <collectionProp name="UserParameters.thread_values">
-            <collectionProp name="-1786349933">
-              <stringProp name="1819092516">https://qr.stg.hivexnet.com/28180105ERXyEjnY7SjnXK0o</stringProp>
-              <stringProp name="-836031825">user-1</stringProp>
-              <stringProp name="170415455">{&quot;amount&quot;:500}</stringProp>
+        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Refund Controller"/>
+        <hashTree>
+          <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="Cancel">
+            <collectionProp name="ModuleController.node_path">
+              <stringProp name="764597751">Test Plan</stringProp>
+              <stringProp name="764597751">Test Plan</stringProp>
+              <stringProp name="2011110042">Cancel</stringProp>
             </collectionProp>
-          </collectionProp>
-          <boolProp name="UserParameters.per_iteration">false</boolProp>
-        </UserParameters>
-        <hashTree/>
-        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
+          </ModuleController>
+          <hashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Cancel Assertion">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="49587">201</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">8</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+        </hashTree>
+        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree">
           <boolProp name="ResultCollector.error_logging">false</boolProp>
           <objProp>
             <name>saveConfig</name>
@@ -2053,7 +2303,7 @@ if (code != &apos;404&apos;) {
         </ResultCollector>
         <hashTree/>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="CPM" enabled="false">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="CPM">
         <intProp name="ThreadGroup.num_threads">1</intProp>
         <intProp name="ThreadGroup.ramp_time">1</intProp>
         <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
@@ -2064,7 +2314,7 @@ if (code != &apos;404&apos;) {
         </elementProp>
       </ThreadGroup>
       <hashTree>
-        <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="GT" enabled="true">
+        <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="GT">
           <collectionProp name="ModuleController.node_path">
             <stringProp name="764597751">Test Plan</stringProp>
             <stringProp name="764597751">Test Plan</stringProp>
@@ -2072,15 +2322,32 @@ if (code != &apos;404&apos;) {
           </collectionProp>
         </ModuleController>
         <hashTree/>
-        <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="REQ4PAY" enabled="true">
-          <collectionProp name="ModuleController.node_path">
-            <stringProp name="764597751">Test Plan</stringProp>
-            <stringProp name="764597751">Test Plan</stringProp>
-            <stringProp name="1825583726">RequestForPay</stringProp>
-          </collectionProp>
-        </ModuleController>
-        <hashTree/>
-        <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="PAY" enabled="true">
+        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="REQ4PAY Controller"/>
+        <hashTree>
+          <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="REQ4PAY">
+            <collectionProp name="ModuleController.node_path">
+              <stringProp name="764597751">Test Plan</stringProp>
+              <stringProp name="764597751">Test Plan</stringProp>
+              <stringProp name="1825583726">RequestForPay</stringProp>
+            </collectionProp>
+          </ModuleController>
+          <hashTree/>
+          <UserParameters guiclass="UserParametersGui" testclass="UserParameters" testname="User Parameters">
+            <collectionProp name="UserParameters.names">
+              <stringProp name="-1373248612">req4payPayload</stringProp>
+              <stringProp name="3361089">msid</stringProp>
+            </collectionProp>
+            <collectionProp name="UserParameters.thread_values">
+              <collectionProp name="1080521061">
+                <stringProp name="-1596723047">{    &quot;amount&quot;: 500,   &quot;currency&quot;: &quot;JPY&quot; }</stringProp>
+                <stringProp name="686599386">bf7f0f8c-5805-4bc8-9e33-19a839d401bc</stringProp>
+              </collectionProp>
+            </collectionProp>
+            <boolProp name="UserParameters.per_iteration">false</boolProp>
+          </UserParameters>
+          <hashTree/>
+        </hashTree>
+        <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="PAY">
           <collectionProp name="ModuleController.node_path">
             <stringProp name="764597751">Test Plan</stringProp>
             <stringProp name="764597751">Test Plan</stringProp>
@@ -2088,7 +2355,7 @@ if (code != &apos;404&apos;) {
           </collectionProp>
         </ModuleController>
         <hashTree/>
-        <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="JSR223 Sampler" enabled="true">
+        <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="Delay 3 seconds">
           <stringProp name="cacheKey">true</stringProp>
           <stringProp name="filename"></stringProp>
           <stringProp name="parameters"></stringProp>
@@ -2096,7 +2363,7 @@ if (code != &apos;404&apos;) {
           <stringProp name="scriptLanguage">groovy</stringProp>
         </JSR223Sampler>
         <hashTree/>
-        <UserParameters guiclass="UserParametersGui" testclass="UserParameters" testname="User Parameters" enabled="true">
+        <UserParameters guiclass="UserParametersGui" testclass="UserParameters" testname="User Parameters">
           <collectionProp name="UserParameters.names">
             <stringProp name="3617">qr</stringProp>
             <stringProp name="3599307">user</stringProp>
@@ -2114,7 +2381,7 @@ if (code != &apos;404&apos;) {
           <boolProp name="UserParameters.per_iteration">false</boolProp>
         </UserParameters>
         <hashTree/>
-        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
+        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree">
           <boolProp name="ResultCollector.error_logging">false</boolProp>
           <objProp>
             <name>saveConfig</name>
@@ -2152,7 +2419,7 @@ if (code != &apos;404&apos;) {
         </ResultCollector>
         <hashTree/>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="CPM GT ONLY" enabled="false">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="CPM Create Order Success" enabled="false">
         <intProp name="ThreadGroup.num_threads">1</intProp>
         <intProp name="ThreadGroup.ramp_time">1</intProp>
         <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
@@ -2163,59 +2430,64 @@ if (code != &apos;404&apos;) {
         </elementProp>
       </ThreadGroup>
       <hashTree>
-        <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="ShyGuyGT" enabled="true">
-          <collectionProp name="ModuleController.node_path">
-            <stringProp name="764597751">Test Plan</stringProp>
-            <stringProp name="764597751">Test Plan</stringProp>
-            <stringProp name="745851531">CPM/ACQ/CREATE</stringProp>
-          </collectionProp>
-        </ModuleController>
-        <hashTree/>
-        <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="JSR223 Sampler" enabled="false">
-          <stringProp name="cacheKey">true</stringProp>
-          <stringProp name="filename"></stringProp>
-          <stringProp name="parameters"></stringProp>
-          <stringProp name="script">Thread.sleep(3000);</stringProp>
-          <stringProp name="scriptLanguage">groovy</stringProp>
-        </JSR223Sampler>
-        <hashTree/>
-        <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="ACQ/Create" enabled="true">
-          <collectionProp name="ModuleController.node_path">
-            <stringProp name="764597751">Test Plan</stringProp>
-            <stringProp name="764597751">Test Plan</stringProp>
-            <stringProp name="745851531">CPM/ACQ/CREATE</stringProp>
-          </collectionProp>
-        </ModuleController>
-        <hashTree/>
-        <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="Query PRid" enabled="true">
-          <collectionProp name="ModuleController.node_path">
-            <stringProp name="764597751">Test Plan</stringProp>
-            <stringProp name="764597751">Test Plan</stringProp>
-            <stringProp name="-711096980">QueryPaymentRequestId</stringProp>
-          </collectionProp>
-        </ModuleController>
-        <hashTree/>
-        <UserParameters guiclass="UserParametersGui" testclass="UserParameters" testname="User Parameters" enabled="true">
-          <collectionProp name="UserParameters.names">
-            <stringProp name="3617">qr</stringProp>
-            <stringProp name="3599307">user</stringProp>
-            <stringProp name="-1373248612">req4payPayload</stringProp>
-            <stringProp name="3361089">msid</stringProp>
-            <stringProp name="96619420">email</stringProp>
-          </collectionProp>
-          <collectionProp name="UserParameters.thread_values">
-            <collectionProp name="-1580403715">
-              <stringProp name="1819092516">https://qr.stg.hivexnet.com/28180105ERXyEjnY7SjnXK0o</stringProp>
-              <stringProp name="-836031825">user-1</stringProp>
-              <stringProp name="-1596723047">{    &quot;amount&quot;: 500,   &quot;currency&quot;: &quot;JPY&quot; }</stringProp>
-              <stringProp name="686599386">bf7f0f8c-5805-4bc8-9e33-19a839d401bc</stringProp>
-              <stringProp name="-968986577">user_1@issuer.com</stringProp>
+        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Generate Target Controller"/>
+        <hashTree>
+          <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="ShyGuyGT">
+            <collectionProp name="ModuleController.node_path">
+              <stringProp name="764597751">Test Plan</stringProp>
+              <stringProp name="764597751">Test Plan</stringProp>
+              <stringProp name="-968368819">ShyGuyGenerateTarget</stringProp>
             </collectionProp>
-          </collectionProp>
-          <boolProp name="UserParameters.per_iteration">false</boolProp>
-        </UserParameters>
-        <hashTree/>
-        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
+          </ModuleController>
+          <hashTree/>
+          <UserParameters guiclass="UserParametersGui" testclass="UserParameters" testname="User Parameters">
+            <collectionProp name="UserParameters.names">
+              <stringProp name="-1373248612">req4payPayload</stringProp>
+              <stringProp name="3361089">msid</stringProp>
+              <stringProp name="96619420">email</stringProp>
+            </collectionProp>
+            <collectionProp name="UserParameters.thread_values">
+              <collectionProp name="1202017775">
+                <stringProp name="-1596723047">{    &quot;amount&quot;: 500,   &quot;currency&quot;: &quot;JPY&quot; }</stringProp>
+                <stringProp name="686599386">bf7f0f8c-5805-4bc8-9e33-19a839d401bc</stringProp>
+                <stringProp name="-968986577">user_1@issuer.com</stringProp>
+              </collectionProp>
+            </collectionProp>
+            <boolProp name="UserParameters.per_iteration">false</boolProp>
+          </UserParameters>
+          <hashTree/>
+        </hashTree>
+        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="CPM Create Controller"/>
+        <hashTree>
+          <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="ACQ/Create">
+            <collectionProp name="ModuleController.node_path">
+              <stringProp name="764597751">Test Plan</stringProp>
+              <stringProp name="764597751">Test Plan</stringProp>
+              <stringProp name="745851531">CPM/ACQ/CREATE</stringProp>
+            </collectionProp>
+          </ModuleController>
+          <hashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Code 201">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="49587">201</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">16</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+          <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="Expecting SUCCESS result code">
+            <stringProp name="JSON_PATH">$..result.resultCode</stringProp>
+            <stringProp name="EXPECTED_VALUE">&quot;SUCCESS&quot;</stringProp>
+            <boolProp name="JSONVALIDATION">true</boolProp>
+            <boolProp name="EXPECT_NULL">false</boolProp>
+            <boolProp name="INVERT">false</boolProp>
+            <boolProp name="ISREGEX">false</boolProp>
+          </JSONPathAssertion>
+          <hashTree/>
+        </hashTree>
+        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree">
           <boolProp name="ResultCollector.error_logging">false</boolProp>
           <objProp>
             <name>saveConfig</name>
@@ -2253,7 +2525,181 @@ if (code != &apos;404&apos;) {
         </ResultCollector>
         <hashTree/>
       </hashTree>
-      <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Discovery with Valid  timeout  Invoice (This takes 5 minutes; only for manual testing)" enabled="false">
+        <intProp name="ThreadGroup.num_threads">1</intProp>
+        <intProp name="ThreadGroup.ramp_time">1</intProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller">
+          <stringProp name="LoopController.loops">1</stringProp>
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+        </elementProp>
+      </ThreadGroup>
+      <hashTree>
+        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Discovery Controller"/>
+        <hashTree>
+          <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="Discovery">
+            <collectionProp name="ModuleController.node_path">
+              <stringProp name="764597751">Test Plan</stringProp>
+              <stringProp name="764597751">Test Plan</stringProp>
+              <stringProp name="1882760592">Discovery</stringProp>
+            </collectionProp>
+          </ModuleController>
+          <hashTree/>
+          <UserParameters guiclass="UserParametersGui" testclass="UserParameters" testname="User Parameters">
+            <collectionProp name="UserParameters.names">
+              <stringProp name="3617">qr</stringProp>
+            </collectionProp>
+            <collectionProp name="UserParameters.thread_values">
+              <collectionProp name="1257507756">
+                <stringProp name="1819092516">https://qr.stg.hivexnet.com/28180105ERXyEjnY7SjnXK0o</stringProp>
+              </collectionProp>
+            </collectionProp>
+            <boolProp name="UserParameters.per_iteration">false</boolProp>
+          </UserParameters>
+          <hashTree/>
+        </hashTree>
+        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Invoice Controller"/>
+        <hashTree>
+          <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="Invoice">
+            <collectionProp name="ModuleController.node_path">
+              <stringProp name="764597751">Test Plan</stringProp>
+              <stringProp name="764597751">Test Plan</stringProp>
+              <stringProp name="695556887">GetInvoice</stringProp>
+            </collectionProp>
+          </ModuleController>
+          <hashTree/>
+          <UserParameters guiclass="UserParametersGui" testclass="UserParameters" testname="User Parameters">
+            <collectionProp name="UserParameters.names">
+              <stringProp name="3599307">user</stringProp>
+              <stringProp name="-39436195">invPayload</stringProp>
+            </collectionProp>
+            <collectionProp name="UserParameters.thread_values">
+              <collectionProp name="929474984">
+                <stringProp name="-836031825">user-1</stringProp>
+                <stringProp name="170415455">{&quot;amount&quot;:500}</stringProp>
+              </collectionProp>
+            </collectionProp>
+            <boolProp name="UserParameters.per_iteration">false</boolProp>
+          </UserParameters>
+          <hashTree/>
+        </hashTree>
+        <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="Get PaymentRequestId">
+          <collectionProp name="ModuleController.node_path">
+            <stringProp name="764597751">Test Plan</stringProp>
+            <stringProp name="764597751">Test Plan</stringProp>
+            <stringProp name="428347014">GetPaymentRequestIdByRlId</stringProp>
+          </collectionProp>
+        </ModuleController>
+        <hashTree/>
+        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Acquire Query Controller"/>
+        <hashTree>
+          <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="acquire query">
+            <collectionProp name="ModuleController.node_path">
+              <stringProp name="764597751">Test Plan</stringProp>
+              <stringProp name="764597751">Test Plan</stringProp>
+              <stringProp name="966142260">PPGW acquirer query</stringProp>
+            </collectionProp>
+          </ModuleController>
+          <hashTree/>
+          <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="Expecting PAY_PENDING">
+            <stringProp name="JSON_PATH">$..paymentResult.resultCode</stringProp>
+            <stringProp name="EXPECTED_VALUE">&quot;PAY_PENDING&quot;</stringProp>
+            <boolProp name="JSONVALIDATION">true</boolProp>
+            <boolProp name="EXPECT_NULL">false</boolProp>
+            <boolProp name="INVERT">false</boolProp>
+            <boolProp name="ISREGEX">false</boolProp>
+          </JSONPathAssertion>
+          <hashTree/>
+        </hashTree>
+        <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="Delay 5 minutes">
+          <stringProp name="scriptLanguage">groovy</stringProp>
+          <stringProp name="parameters"></stringProp>
+          <stringProp name="filename"></stringProp>
+          <stringProp name="cacheKey">true</stringProp>
+          <stringProp name="script">Thread.sleep(300000)</stringProp>
+        </JSR223Sampler>
+        <hashTree/>
+        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Acquire Query Controller"/>
+        <hashTree>
+          <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="acquire query">
+            <collectionProp name="ModuleController.node_path">
+              <stringProp name="764597751">Test Plan</stringProp>
+              <stringProp name="764597751">Test Plan</stringProp>
+              <stringProp name="966142260">PPGW acquirer query</stringProp>
+            </collectionProp>
+          </ModuleController>
+          <hashTree/>
+          <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="Expecting PAY_FAILED">
+            <stringProp name="JSON_PATH">$..paymentResult.resultCode</stringProp>
+            <stringProp name="EXPECTED_VALUE">&quot;PAY_FAILED&quot;</stringProp>
+            <boolProp name="JSONVALIDATION">true</boolProp>
+            <boolProp name="EXPECT_NULL">false</boolProp>
+            <boolProp name="INVERT">false</boolProp>
+            <boolProp name="ISREGEX">false</boolProp>
+          </JSONPathAssertion>
+          <hashTree/>
+        </hashTree>
+        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="User Pay Controller"/>
+        <hashTree>
+          <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="PAY">
+            <collectionProp name="ModuleController.node_path">
+              <stringProp name="764597751">Test Plan</stringProp>
+              <stringProp name="764597751">Test Plan</stringProp>
+              <stringProp name="80008">Pay</stringProp>
+            </collectionProp>
+          </ModuleController>
+          <hashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="51508">400</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
+            <boolProp name="Assertion.assume_success">true</boolProp>
+            <intProp name="Assertion.test_type">8</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+        </hashTree>
+        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <url>true</url>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+      </hashTree>
+      <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
         <boolProp name="ResultCollector.error_logging">false</boolProp>
         <objProp>
           <name>saveConfig</name>
